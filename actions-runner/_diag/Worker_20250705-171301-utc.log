@@ -1,0 +1,3742 @@
+[2025-07-05 17:13:01Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2025-07-05 17:13:01Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:01Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:01Z INFO HostContext] Well known config file 'Credentials': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\.credentials'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known config file 'Runner': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\.runner'
+[2025-07-05 17:13:02Z INFO Worker] Version: 2.325.0
+[2025-07-05 17:13:02Z INFO Worker] Commit: 71ed7cd46223bd5d61633445946813012b502d54
+[2025-07-05 17:13:02Z INFO Worker] Culture: en-US
+[2025-07-05 17:13:02Z INFO Worker] UI Culture: en-US
+[2025-07-05 17:13:02Z INFO Worker] Waiting to receive the job message from the channel.
+[2025-07-05 17:13:02Z INFO ProcessChannel] Receiving message of length 21823, with hash '263d76d93fb51eb2b3c2407ce24c4c3627b165f9fedf8150d6b2a8c8f61c7c9c'
+[2025-07-05 17:13:02Z INFO Worker] Message received.
+[2025-07-05 17:13:02Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/main.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v3",
+        "repositoryType": "GitHub"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 14,
+        "col": 15,
+        "lit": "1. Checkout repository code"
+      },
+      "contextName": "__actions_checkout",
+      "condition": "success()",
+      "id": "4bd1602a-8625-47c2-bdf7-8c57f0090162",
+      "name": "__actions_checkout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/setup-python",
+        "ref": "v4",
+        "repositoryType": "GitHub"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 17,
+        "col": 15,
+        "lit": "2. Setup Python environment"
+      },
+      "contextName": "__actions_setup-python",
+      "inputs": {
+        "type": 2,
+        "file": 1,
+        "line": 20,
+        "col": 11,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 20,
+              "col": 11,
+              "lit": "python-version"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 20,
+              "col": 27,
+              "lit": "3.13.1"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "4642cdf6-362d-48d5-90df-4616fe640c35",
+      "name": "__actions_setup-python"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 22,
+        "col": 15,
+        "lit": "3. Install project dependencies"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 23,
+              "col": 14,
+              "lit": "pip install pyserial platformio\npio pkg install --global\n"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 26,
+              "col": 16,
+              "lit": "bash"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "90336920-5901-48da-b2c4-c8b8461f1625",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 28,
+        "col": 15,
+        "lit": "4. Build Firmware for DUT and Simulator"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 29,
+              "col": 14,
+              "lit": "echo \"Building DUT firmware...\"\npio run -d firmware-dut\necho \"Building Simulator firmware...\"\npio run -d firmware-simulator\n"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 34,
+              "col": 16,
+              "lit": "bash"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "b451322a-ac71-4d4f-869d-2b6814b61d2e",
+      "name": "__run_2"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 36,
+        "col": 15,
+        "lit": "5. Flash Firmwares to devices"
+      },
+      "contextName": "__run_3",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 37,
+              "col": 14,
+              "lit": "echo \"Flashing DUT...\"\npio run -d firmware-dut -t upload\necho \"Flashing Simulator...\"\npio run -d firmware-simulator -t upload\n"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 42,
+              "col": 16,
+              "lit": "bash"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "92719f22-7b04-452e-bd2b-ca2ac3b61295",
+      "name": "__run_3"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 44,
+        "col": 15,
+        "lit": "6. Run Hardware-in-the-Loop Tests"
+      },
+      "contextName": "__run_4",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 45,
+              "col": 14,
+              "lit": "python run_tests.py"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 46,
+              "col": 16,
+              "lit": "bash"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "e7df8dbf-d688-416b-830a-1fcdf00fb75a",
+      "name": "__run_4"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions_add_check_run_id_to_job_context": {
+      "value": "false"
+    },
+    "actions_display_helpful_actions_download_errors": {
+      "value": "true"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "build-flash-and-test"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\",\"Packages\":\"read\"}"
+    },
+    "system.orchestrationId": {
+      "value": "535ae392-fc6d-4a11-8164-c7aeafdf60a7.build-flash-and-test.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "Build, Flash and HIL Test"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "535ae392-fc6d-4a11-8164-c7aeafdf60a7",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "535ae392-fc6d-4a11-8164-c7aeafdf60a7",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "ec82bed3-1d82-5cf8-9d7d-487c19885133",
+  "jobDisplayName": "Build, Flash and HIL Test",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/iwEAcfLkoTcvWTJ3l3nlLBZEHR2Sf6tKXX6T60OcGgx6n2dJBJ/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus7.actions.githubusercontent.com/iwEAcfLkoTcvWTJ3l3nlLBZEHR2Sf6tKXX6T60OcGgx6n2dJBJ/",
+          "GenerateIdTokenUrl": ""
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-1-azure-eastus.actions.githubusercontent.com/59/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "d4241be792ac37b8b7548cfbfa98898d8a3bb83d"
+        },
+        {
+          "k": "repository",
+          "v": "hibro123code/cicd-hil-embedded-testing"
+        },
+        {
+          "k": "repository_owner",
+          "v": "hibro123code"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "70836058"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/hibro123code/cicd-hil-embedded-testing.git"
+        },
+        {
+          "k": "run_id",
+          "v": "16090335360"
+        },
+        {
+          "k": "run_number",
+          "v": "4"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "actor_id",
+          "v": "70836058"
+        },
+        {
+          "k": "actor",
+          "v": "hibro123code"
+        },
+        {
+          "k": "workflow",
+          "v": "Embedded CI/CD HIL Test"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "d4241be792ac37b8b7548cfbfa98898d8a3bb83d"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "ff1ac40b8fb48e9ad023ec6d1dc02db3a7a0b651"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "70836058+hibro123code@users.noreply.github.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "NguyenDuyPhuc"
+                              },
+                              {
+                                "k": "username",
+                                "v": "hibro123code"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "noreply@github.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "GitHub"
+                              },
+                              {
+                                "k": "username",
+                                "v": "web-flow"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "d4241be792ac37b8b7548cfbfa98898d8a3bb83d"
+                        },
+                        {
+                          "k": "message",
+                          "v": "Update main.yml"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2025-07-06T00:12:55+07:00"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "2bf4d24858c9289c2515f1efa7913a634a6b324a"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/hibro123code/cicd-hil-embedded-testing/commit/d4241be792ac37b8b7548cfbfa98898d8a3bb83d"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/hibro123code/cicd-hil-embedded-testing/compare/ff1ac40b8fb4...d4241be792ac"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "70836058+hibro123code@users.noreply.github.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "NguyenDuyPhuc"
+                          },
+                          {
+                            "k": "username",
+                            "v": "hibro123code"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "noreply@github.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "GitHub"
+                          },
+                          {
+                            "k": "username",
+                            "v": "web-flow"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "d4241be792ac37b8b7548cfbfa98898d8a3bb83d"
+                    },
+                    {
+                      "k": "message",
+                      "v": "Update main.yml"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2025-07-06T00:12:55+07:00"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "2bf4d24858c9289c2515f1efa7913a634a6b324a"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/hibro123code/cicd-hil-embedded-testing/commit/d4241be792ac37b8b7548cfbfa98898d8a3bb83d"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "70836058+hibro123code@users.noreply.github.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "hibro123code"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/hibro123code/cicd-hil-embedded-testing.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1751709181.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "hibro123code/cicd-hil-embedded-testing"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/hibro123code/cicd-hil-embedded-testing.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/hibro123code/cicd-hil-embedded-testing"
+                    },
+                    {
+                      "k": "id",
+                      "v": 1014229429.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "JavaScript"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "cicd-hil-embedded-testing"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOPHPptQ"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/70836058?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "70836058+hibro123code@users.noreply.github.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/hibro123code/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/hibro123code/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/hibro123code/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/hibro123code/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/hibro123code"
+                          },
+                          {
+                            "k": "id",
+                            "v": 70836058.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "hibro123code"
+                          },
+                          {
+                            "k": "name",
+                            "v": "hibro123code"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "MDQ6VXNlcjcwODM2MDU4"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/hibro123code/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/hibro123code/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/hibro123code/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/hibro123code/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/hibro123code/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/hibro123code"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1751735576.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 122782.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:hibro123code/cicd-hil-embedded-testing.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/hibro123code/cicd-hil-embedded-testing"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2025-07-05T16:56:53Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/hibro123code/cicd-hil-embedded-testing"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/70836058?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/hibro123code/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/hibro123code/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/hibro123code/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/hibro123code/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/hibro123code"
+                    },
+                    {
+                      "k": "id",
+                      "v": 70836058.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "hibro123code"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "MDQ6VXNlcjcwODM2MDU4"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/hibro123code/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/hibro123code/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/hibro123code/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/hibro123code/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/hibro123code/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/hibro123code"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "hibro123code/cicd-hil-embedded-testing/.github/workflows/main.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "d4241be792ac37b8b7548cfbfa98898d8a3bb83d"
+        },
+        {
+          "k": "repository_id",
+          "v": "1014229429"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "hibro123code"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDOBDjfWg"
+}
+[2025-07-05 17:13:02Z INFO JobRunner] Job ID ec82bed3-1d82-5cf8-9d7d-487c19885133
+[2025-07-05 17:13:02Z INFO ConfigurationStore] currentAssemblyLocation: D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin\Runner.Worker.dll
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO ConfigurationStore] binPath: D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO ConfigurationStore] RootFolder: D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known config file 'Runner': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\.runner'
+[2025-07-05 17:13:02Z INFO ConfigurationStore] ConfigFilePath: D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\.runner
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known config file 'MigratedRunner': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\.runner_migrated'
+[2025-07-05 17:13:02Z INFO ConfigurationStore] MigratedConfigFilePath: D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\.runner_migrated
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known config file 'Credentials': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\.credentials'
+[2025-07-05 17:13:02Z INFO ConfigurationStore] CredFilePath: D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\.credentials
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known config file 'MigratedCredentials': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\.credentials_migrated'
+[2025-07-05 17:13:02Z INFO ConfigurationStore] MigratedCredFilePath: D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\.credentials_migrated
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known config file 'Service': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\.service'
+[2025-07-05 17:13:02Z INFO ConfigurationStore] ServiceConfigFilePath: D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\.service
+[2025-07-05 17:13:02Z INFO ConfigurationStore] Read setting file: 406 chars
+[2025-07-05 17:13:02Z INFO JobRunner] Initializing launch client
+[2025-07-05 17:13:02Z INFO JobServerQueue] Initializing results client
+[2025-07-05 17:13:02Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2025-07-05 17:13:02Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2025-07-05 17:13:02Z INFO JobServerQueue] Start process web console line queue.
+[2025-07-05 17:13:02Z INFO JobServerQueue] Start process file upload queue.
+[2025-07-05 17:13:02Z INFO JobServerQueue] Start results file upload queue.
+[2025-07-05 17:13:02Z INFO JobServerQueue] Starting results-based upload queue...
+[2025-07-05 17:13:02Z INFO JobServerQueue] Start process timeline update queue.
+[2025-07-05 17:13:02Z INFO ExecutionContext] Initializing Job context
+[2025-07-05 17:13:02Z INFO ExecutionContext] Initialize GitHub context
+[2025-07-05 17:13:02Z INFO ExecutionContext] Initialize Env context
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:02Z INFO JobRunner] Starting the job execution context.
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:02Z INFO JobRunner] Validating directory permissions for: 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Tools': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_tool'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Temp': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_temp'
+[2025-07-05 17:13:02Z INFO JobRunner] Getting job extension.
+[2025-07-05 17:13:02Z INFO JobRunner] Initialize job. Getting all job steps.
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known config file 'Credentials': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\.credentials'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known config file 'SetupInfo': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\.setup_info'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:02Z INFO PipelineDirectoryManager] Loading tracking config if exists: D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_PipelineMapping\hibro123code/cicd-hil-embedded-testing\PipelineFolder.json
+[2025-07-05 17:13:02Z INFO PipelineDirectoryManager] Updating job run properties.
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:02Z INFO JobExtension] Downloading actions
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:02Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:02Z INFO Worker] Listening for cancel message from the channel.
+[2025-07-05 17:13:02Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2025-07-05 17:13:03Z INFO ResultServer] Successfully started websocket client.
+[2025-07-05 17:13:03Z INFO JobServerQueue] Try to append 1 batches web console lines for record '88862379-1885-482a-9cff-2455e364a882', success rate: 1/1.
+[2025-07-05 17:13:03Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:03Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:03Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:03Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:03Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:03Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:03Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:03Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:03Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/checkout/zipball/f43a0e5ff2bd294095638e18286ca9a3d1956744' into D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions\_temp_578c2267-2d57-4989-ab72-54cccbcd5edf\2e0e068b-1756-45e7-ba31-5dacb066c651.zip.
+[2025-07-05 17:13:03Z INFO JobServerQueue] Try to append 1 batches web console lines for record '88862379-1885-482a-9cff-2455e364a882', success rate: 1/1.
+[2025-07-05 17:13:03Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2025-07-05 17:13:04Z INFO ActionManager] Request URL: https://api.github.com/repos/actions/checkout/zipball/f43a0e5ff2bd294095638e18286ca9a3d1956744 X-GitHub-Request-Id: 2E24:333225:180C7:784AA:68695D20 Http Status: OK
+[2025-07-05 17:13:04Z INFO ActionManager] Finished getting action repository.
+[2025-07-05 17:13:04Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:04Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:04Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:04Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:04Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:04Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:04Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:04Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:04Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/setup-python/zipball/7f4fc3e22c37d6ff65e88745f38bd3157c663f7c' into D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions\_temp_af2c428e-cd7e-431d-a445-1d146b66a202\91312d1e-094d-4c47-82c0-d068636ab452.zip.
+[2025-07-05 17:13:05Z INFO JobServerQueue] Try to append 1 batches web console lines for record '88862379-1885-482a-9cff-2455e364a882', success rate: 1/1.
+[2025-07-05 17:13:06Z INFO ActionManager] Request URL: https://api.github.com/repos/actions/setup-python/zipball/7f4fc3e22c37d6ff65e88745f38bd3157c663f7c X-GitHub-Request-Id: 7691:7919:1FB97:93C6B:68695D21 Http Status: OK
+[2025-07-05 17:13:07Z INFO ActionManager] Finished getting action repository.
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 67,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 68,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-07-05 17:13:07Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:07Z INFO ActionManager] Load action that reference repository from 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions\actions\checkout\v3'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 67,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 68,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-07-05 17:13:07Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-07-05 17:13:07Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-07-05 17:13:07Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Ignore action property author.
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Ignore action property branding.
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Setup Python",
+  "description": "Set up a specific version of Python and add the command-line tools to the PATH.",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 6,
+          "col": 3,
+          "lit": "python-version"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "python-version-file"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 3,
+          "lit": "cache"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "architecture"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 15,
+          "col": 3,
+          "lit": "check-latest"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 17,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 18,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 3,
+          "line": 20,
+          "col": 14,
+          "expr": "github.server_url == 'https://github.com' && github.token || ''"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 21,
+          "col": 3,
+          "lit": "cache-dependency-path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 23,
+          "col": 3,
+          "lit": "update-environment"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 26,
+          "col": 3,
+          "lit": "allow-prereleases"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 28,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/setup/index.js",
+    "pre": null,
+    "post": "dist/cache-save/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "success()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-07-05 17:13:07Z INFO ActionManager] Action node.js file: dist/setup/index.js, no more preparation.
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:07Z INFO ActionManager] Load action that reference repository from 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions\actions\setup-python\v4'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Ignore action property author.
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Ignore action property branding.
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Setup Python",
+  "description": "Set up a specific version of Python and add the command-line tools to the PATH.",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 6,
+          "col": 3,
+          "lit": "python-version"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "python-version-file"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 3,
+          "lit": "cache"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "architecture"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 15,
+          "col": 3,
+          "lit": "check-latest"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 17,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 18,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 3,
+          "line": 20,
+          "col": 14,
+          "expr": "github.server_url == 'https://github.com' && github.token || ''"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 21,
+          "col": 3,
+          "lit": "cache-dependency-path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 23,
+          "col": 3,
+          "lit": "update-environment"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 26,
+          "col": 3,
+          "lit": "allow-prereleases"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 28,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/setup/index.js",
+    "pre": null,
+    "post": "dist/cache-save/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "success()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-07-05 17:13:07Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-07-05 17:13:07Z INFO ActionManager] Action node.js file: dist/setup/index.js.
+[2025-07-05 17:13:07Z INFO ActionManager] Action post node.js file: dist/cache-save/index.js.
+[2025-07-05 17:13:07Z INFO JobExtension] Adding .
+[2025-07-05 17:13:07Z INFO JobExtension] Adding .
+[2025-07-05 17:13:07Z INFO JobExtension] Adding .
+[2025-07-05 17:13:07Z INFO JobExtension] Adding .
+[2025-07-05 17:13:07Z INFO JobExtension] Adding .
+[2025-07-05 17:13:07Z INFO JobExtension] Adding .
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:07Z INFO JobExtension] Total accessible running process: 249.
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO JobExtension] Start checking service connectivity in background.
+[2025-07-05 17:13:07Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "88862379-1885-482a-9cff-2455e364a882",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 6,
+  "startTime": "2025-07-05T17:13:02.4870635Z",
+  "finishTime": "2025-07-05T17:13:07.6677298Z"
+}.
+[2025-07-05 17:13:07Z INFO JobRunner] Total job steps: 6.
+[2025-07-05 17:13:07Z INFO JobRunner] Run all job steps.
+[2025-07-05 17:13:07Z INFO StepsRunner] Processing step: DisplayName='1. Checkout repository code'
+[2025-07-05 17:13:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record '88862379-1885-482a-9cff-2455e364a882', success rate: 1/1.
+[2025-07-05 17:13:07Z INFO StepsRunner] Evaluating: success()
+[2025-07-05 17:13:07Z INFO StepsRunner] Result: true
+[2025-07-05 17:13:07Z INFO StepsRunner] Starting the step.
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO StepsRunner] Which2: 'chcp'
+[2025-07-05 17:13:07Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Working directory: 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper] Process started with process id 5792, waiting for process exit.
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper] Finished process 5792 with exit code 0, and elapsed time 00:00:00.0286399.
+[2025-07-05 17:13:07Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:07Z INFO ActionManager] Load action that reference repository from 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions\actions\checkout\v3'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 67,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 68,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-07-05 17:13:07Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-07-05 17:13:07Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-07-05 17:13:07Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-07-05 17:13:07Z INFO ExecutionContext] Reserve record order 8 to 14 for post job actions.
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Temp': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_temp'
+[2025-07-05 17:13:07Z INFO ExecutionContext] Write event payload to D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Temp': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_temp'
+[2025-07-05 17:13:07Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "hibro123code/cicd-hil-embedded-testing"
+}
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 60,
+  "col": 14,
+  "lit": ""
+}
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 67,
+  "col": 14,
+  "lit": "1"
+}
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "false"
+}
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "false"
+}
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-05 17:13:07Z INFO ActionManifestManager] Input 'github-server-url': default value evaluate result: ""
+[2025-07-05 17:13:07Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command error
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command group
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-07-05 17:13:07Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:07Z INFO HostContext] Well known directory 'Externals': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\externals'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   File name: 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\externals\node20\bin\node.exe'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Arguments: '"D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions\actions\checkout\v3\dist/index.js"'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Working directory: 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\cicd-hil-embedded-testing\cicd-hil-embedded-testing'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-05 17:13:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4bd1602a-8625-47c2-bdf7-8c57f0090162', success rate: 1/1.
+[2025-07-05 17:13:07Z INFO ProcessInvokerWrapper] Process started with process id 5880, waiting for process exit.
+[2025-07-05 17:13:08Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-07-05 17:13:08Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag\blocks\535ae392-fc6d-4a11-8164-c7aeafdf60a7_88862379-1885-482a-9cff-2455e364a882.1
+[2025-07-05 17:13:08Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-07-05 17:13:08Z INFO AddMaskCommandExtension] Add new secret mask with length of 76
+[2025-07-05 17:13:08Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4bd1602a-8625-47c2-bdf7-8c57f0090162', success rate: 1/1.
+[2025-07-05 17:13:08Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4bd1602a-8625-47c2-bdf7-8c57f0090162', success rate: 1/1.
+[2025-07-05 17:13:10Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4bd1602a-8625-47c2-bdf7-8c57f0090162', success rate: 1/1.
+[2025-07-05 17:13:10Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4bd1602a-8625-47c2-bdf7-8c57f0090162', success rate: 1/1.
+[2025-07-05 17:13:10Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-07-05 17:13:11Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4bd1602a-8625-47c2-bdf7-8c57f0090162', success rate: 1/1.
+[2025-07-05 17:13:11Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4bd1602a-8625-47c2-bdf7-8c57f0090162', success rate: 1/1.
+[2025-07-05 17:13:12Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4bd1602a-8625-47c2-bdf7-8c57f0090162', success rate: 1/1.
+[2025-07-05 17:13:13Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4bd1602a-8625-47c2-bdf7-8c57f0090162', success rate: 1/1.
+[2025-07-05 17:13:13Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4bd1602a-8625-47c2-bdf7-8c57f0090162', success rate: 1/1.
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper] Finished process 5880 with exit code 0, and elapsed time 00:00:05.6653984.
+[2025-07-05 17:13:13Z INFO CreateStepSummaryCommand] Step Summary file (D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_temp\_runner_file_commands\step_summary_baa6fd87-5a75-45a5-a12b-543850be376e) is empty; skipping attachment upload
+[2025-07-05 17:13:13Z INFO StepsRunner] Step result: 
+[2025-07-05 17:13:13Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v3",
+  "type": "node20",
+  "stage": "Main",
+  "stepId": "4bd1602a-8625-47c2-bdf7-8c57f0090162",
+  "stepContextName": "__actions_checkout",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 6,
+  "startTime": "2025-07-05T17:13:07.7043351Z",
+  "finishTime": "2025-07-05T17:13:13.6311549Z"
+}.
+[2025-07-05 17:13:13Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-07-05 17:13:13Z INFO StepsRunner] Current state: job state = ''
+[2025-07-05 17:13:13Z INFO StepsRunner] Processing step: DisplayName='2. Setup Python environment'
+[2025-07-05 17:13:13Z INFO StepsRunner] Evaluating: success()
+[2025-07-05 17:13:13Z INFO StepsRunner] Result: true
+[2025-07-05 17:13:13Z INFO StepsRunner] Starting the step.
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:13Z INFO StepsRunner] Which2: 'chcp'
+[2025-07-05 17:13:13Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Working directory: 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper] Process started with process id 9904, waiting for process exit.
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper] Finished process 9904 with exit code 0, and elapsed time 00:00:00.0146178.
+[2025-07-05 17:13:13Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:13Z INFO ActionManager] Load action that reference repository from 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions\actions\setup-python\v4'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:13Z INFO ActionManifestManager] Ignore action property author.
+[2025-07-05 17:13:13Z INFO ActionManifestManager] Ignore action property branding.
+[2025-07-05 17:13:13Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Setup Python",
+  "description": "Set up a specific version of Python and add the command-line tools to the PATH.",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 6,
+          "col": 3,
+          "lit": "python-version"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "python-version-file"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 10,
+          "col": 3,
+          "lit": "cache"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 13,
+          "col": 3,
+          "lit": "architecture"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 15,
+          "col": 3,
+          "lit": "check-latest"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 17,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 18,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 3,
+          "line": 20,
+          "col": 14,
+          "expr": "github.server_url == 'https://github.com' && github.token || ''"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 21,
+          "col": 3,
+          "lit": "cache-dependency-path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 23,
+          "col": 3,
+          "lit": "update-environment"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 26,
+          "col": 3,
+          "lit": "allow-prereleases"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 28,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/setup/index.js",
+    "pre": null,
+    "post": "dist/cache-save/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "success()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-07-05 17:13:13Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-07-05 17:13:13Z INFO ActionManager] Action node.js file: dist/setup/index.js.
+[2025-07-05 17:13:13Z INFO ActionManager] Action post node.js file: dist/cache-save/index.js.
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Temp': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_temp'
+[2025-07-05 17:13:13Z INFO ExecutionContext] Write event payload to D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Temp': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_temp'
+[2025-07-05 17:13:13Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-07-05 17:13:13Z INFO ActionManifestManager] Input 'python-version-file': default value evaluate result: ""
+[2025-07-05 17:13:13Z INFO ActionManifestManager] Input 'cache': default value evaluate result: ""
+[2025-07-05 17:13:13Z INFO ActionManifestManager] Input 'architecture': default value evaluate result: ""
+[2025-07-05 17:13:13Z INFO ActionManifestManager] Input 'check-latest': default value evaluate result: {
+  "type": 0,
+  "file": 3,
+  "line": 17,
+  "col": 14,
+  "lit": "false"
+}
+[2025-07-05 17:13:13Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 3,
+  "line": 20,
+  "col": 14,
+  "lit": "***"
+}
+[2025-07-05 17:13:13Z INFO ActionManifestManager] Input 'cache-dependency-path': default value evaluate result: ""
+[2025-07-05 17:13:13Z INFO ActionManifestManager] Input 'update-environment': default value evaluate result: {
+  "type": 0,
+  "file": 3,
+  "line": 25,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-05 17:13:13Z INFO ActionManifestManager] Input 'allow-prereleases': default value evaluate result: {
+  "type": 0,
+  "file": 3,
+  "line": 28,
+  "col": 14,
+  "lit": "false"
+}
+[2025-07-05 17:13:13Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command error
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command group
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-07-05 17:13:13Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:13Z INFO HostContext] Well known directory 'Externals': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\externals'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   File name: 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\externals\node20\bin\node.exe'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Arguments: '"D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions\actions\setup-python\v4\dist/setup/index.js"'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Working directory: 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\cicd-hil-embedded-testing\cicd-hil-embedded-testing'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-05 17:13:13Z INFO ProcessInvokerWrapper] Process started with process id 7136, waiting for process exit.
+[2025-07-05 17:13:13Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4bd1602a-8625-47c2-bdf7-8c57f0090162', success rate: 1/1.
+[2025-07-05 17:13:13Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4642cdf6-362d-48d5-90df-4616fe640c35', success rate: 1/1.
+[2025-07-05 17:13:14Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-07-05 17:13:14Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag\blocks\535ae392-fc6d-4a11-8164-c7aeafdf60a7_4bd1602a-8625-47c2-bdf7-8c57f0090162.1
+[2025-07-05 17:13:14Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-07-05 17:13:15Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-07-05 17:13:15Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4642cdf6-362d-48d5-90df-4616fe640c35', success rate: 1/1.
+[2025-07-05 17:13:16Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4642cdf6-362d-48d5-90df-4616fe640c35', success rate: 1/1.
+[2025-07-05 17:13:17Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:17Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:17Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:27Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:27Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:27Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:34Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4642cdf6-362d-48d5-90df-4616fe640c35', success rate: 1/1.
+[2025-07-05 17:13:35Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4642cdf6-362d-48d5-90df-4616fe640c35', success rate: 1/1.
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper] Finished process 7136 with exit code 1, and elapsed time 00:00:21.9949462.
+[2025-07-05 17:13:35Z INFO CreateStepSummaryCommand] Step Summary file (D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_temp\_runner_file_commands\step_summary_b1c24892-7f7f-4d35-ac00-a8f0eef5d496) is empty; skipping attachment upload
+[2025-07-05 17:13:35Z INFO StepsRunner] Step result: Failed
+[2025-07-05 17:13:35Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/setup-python",
+  "ref": "v4",
+  "type": "node20",
+  "stage": "Main",
+  "stepId": "4642cdf6-362d-48d5-90df-4616fe640c35",
+  "stepContextName": "__actions_setup-python",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "failed",
+  "errorMessages": [
+    "./setup.ps1 : File",
+    "D:\\EmbeddedTesting\\CICD_HIL_Testing\\actions-runner\\_work\\_temp\\5c564745-5e06-49a6-b696-9110519b1c44\\setup.ps1 cannot \r\nbe loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at \r\nhttps:/go.microsoft",
+    "The process 'C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' failed with exit code 1"
+  ],
+  "executionTimeInSeconds": 23,
+  "startTime": "2025-07-05T17:13:13.6321657Z",
+  "finishTime": "2025-07-05T17:13:35.6780069Z"
+}.
+[2025-07-05 17:13:35Z INFO StepsRunner] Update job result with current step result 'Failed'.
+[2025-07-05 17:13:35Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-07-05 17:13:35Z INFO StepsRunner] Processing step: DisplayName='3. Install project dependencies'
+[2025-07-05 17:13:35Z INFO StepsRunner] Evaluating: success()
+[2025-07-05 17:13:35Z INFO StepsRunner] Result: false
+[2025-07-05 17:13:35Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-07-05 17:13:35Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-07-05 17:13:35Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-07-05 17:13:35Z INFO StepsRunner] Processing step: DisplayName='4. Build Firmware for DUT and Simulator'
+[2025-07-05 17:13:35Z INFO StepsRunner] Evaluating: success()
+[2025-07-05 17:13:35Z INFO StepsRunner] Result: false
+[2025-07-05 17:13:35Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-07-05 17:13:35Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-07-05 17:13:35Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-07-05 17:13:35Z INFO StepsRunner] Processing step: DisplayName='5. Flash Firmwares to devices'
+[2025-07-05 17:13:35Z INFO StepsRunner] Evaluating: success()
+[2025-07-05 17:13:35Z INFO StepsRunner] Result: false
+[2025-07-05 17:13:35Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-07-05 17:13:35Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-07-05 17:13:35Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-07-05 17:13:35Z INFO StepsRunner] Processing step: DisplayName='6. Run Hardware-in-the-Loop Tests'
+[2025-07-05 17:13:35Z INFO StepsRunner] Evaluating: success()
+[2025-07-05 17:13:35Z INFO StepsRunner] Result: false
+[2025-07-05 17:13:35Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-07-05 17:13:35Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-07-05 17:13:35Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-07-05 17:13:35Z INFO StepsRunner] Processing step: DisplayName='Post 2. Setup Python environment'
+[2025-07-05 17:13:35Z INFO StepsRunner] Evaluating: success()
+[2025-07-05 17:13:35Z INFO StepsRunner] Result: false
+[2025-07-05 17:13:35Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-07-05 17:13:35Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-07-05 17:13:35Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-07-05 17:13:35Z INFO StepsRunner] Processing step: DisplayName='Post 1. Checkout repository code'
+[2025-07-05 17:13:35Z INFO StepsRunner] Evaluating: always()
+[2025-07-05 17:13:35Z INFO StepsRunner] Result: true
+[2025-07-05 17:13:35Z INFO StepsRunner] Starting the step.
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:35Z INFO StepsRunner] Which2: 'chcp'
+[2025-07-05 17:13:35Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Working directory: 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper] Process started with process id 2144, waiting for process exit.
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper] Finished process 2144 with exit code 0, and elapsed time 00:00:00.0194795.
+[2025-07-05 17:13:35Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:35Z INFO ActionManager] Load action that reference repository from 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions\actions\checkout\v3'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Actions': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions'
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 67,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 68,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-07-05 17:13:35Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-07-05 17:13:35Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-07-05 17:13:35Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Temp': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_temp'
+[2025-07-05 17:13:35Z INFO ExecutionContext] Write event payload to D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Temp': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_temp'
+[2025-07-05 17:13:35Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "hibro123code/cicd-hil-embedded-testing"
+}
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 60,
+  "col": 14,
+  "lit": ""
+}
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 67,
+  "col": 14,
+  "lit": "1"
+}
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "false"
+}
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "false"
+}
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "true"
+}
+[2025-07-05 17:13:35Z INFO ActionManifestManager] Input 'github-server-url': default value evaluate result: ""
+[2025-07-05 17:13:35Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command error
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command group
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-07-05 17:13:35Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:35Z INFO HostContext] Well known directory 'Externals': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\externals'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper] Starting process:
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   File name: 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\externals\node20\bin\node.exe'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Arguments: '"D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_actions\actions\checkout\v3\dist/index.js"'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Working directory: 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\cicd-hil-embedded-testing\cicd-hil-embedded-testing'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-07-05 17:13:35Z INFO ProcessInvokerWrapper] Process started with process id 14832, waiting for process exit.
+[2025-07-05 17:13:35Z INFO JobServerQueue] Try to append 1 batches web console lines for record '4642cdf6-362d-48d5-90df-4616fe640c35', success rate: 1/1.
+[2025-07-05 17:13:35Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'bcc57883-0f53-4597-9ef2-a8cccabb1e22', success rate: 1/1.
+[2025-07-05 17:13:36Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2025-07-05 17:13:36Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'bcc57883-0f53-4597-9ef2-a8cccabb1e22', success rate: 1/1.
+[2025-07-05 17:13:36Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'bcc57883-0f53-4597-9ef2-a8cccabb1e22', success rate: 1/1.
+[2025-07-05 17:13:36Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-07-05 17:13:36Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag\blocks\535ae392-fc6d-4a11-8164-c7aeafdf60a7_4642cdf6-362d-48d5-90df-4616fe640c35.1
+[2025-07-05 17:13:36Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-07-05 17:13:37Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'bcc57883-0f53-4597-9ef2-a8cccabb1e22', success rate: 1/1.
+[2025-07-05 17:13:37Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-07-05 17:13:37Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'bcc57883-0f53-4597-9ef2-a8cccabb1e22', success rate: 1/1.
+[2025-07-05 17:13:37Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:37Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:37Z INFO HostContext] Well known directory 'Work': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work'
+[2025-07-05 17:13:38Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-05 17:13:38Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-07-05 17:13:38Z INFO ProcessInvokerWrapper] Finished process 14832 with exit code 0, and elapsed time 00:00:02.4277942.
+[2025-07-05 17:13:38Z INFO CreateStepSummaryCommand] Step Summary file (D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_temp\_runner_file_commands\step_summary_bfea71d0-47d9-42a0-ad80-001efc63d6af) is empty; skipping attachment upload
+[2025-07-05 17:13:38Z INFO StepsRunner] Step result: 
+[2025-07-05 17:13:38Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v3",
+  "type": "node20",
+  "stage": "Post",
+  "stepId": "bcc57883-0f53-4597-9ef2-a8cccabb1e22",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 3,
+  "startTime": "2025-07-05T17:13:35.6875095Z",
+  "finishTime": "2025-07-05T17:13:38.1563511Z"
+}.
+[2025-07-05 17:13:38Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-07-05 17:13:38Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-07-05 17:13:38Z INFO JobRunner] Finalize job.
+[2025-07-05 17:13:38Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:38Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:38Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:38Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:38Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:38Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:38Z INFO JobExtension] Initialize Env context
+[2025-07-05 17:13:38Z INFO JobExtension] Initialize steps context
+[2025-07-05 17:13:38Z INFO JobExtension] Total accessible running process: 243.
+[2025-07-05 17:13:38Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "ac991d90-289b-4f87-bcc5-26463cfa98fc",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-07-05T17:13:38.1739261Z",
+  "finishTime": "2025-07-05T17:13:38.1832701Z"
+}.
+[2025-07-05 17:13:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ac991d90-289b-4f87-bcc5-26463cfa98fc', success rate: 1/1.
+[2025-07-05 17:13:38Z INFO JobRunner] Job result after all job steps finish: Failed
+[2025-07-05 17:13:38Z INFO JobRunner] Completing the job execution context.
+[2025-07-05 17:13:38Z INFO JobRunner] Shutting down the job server queue.
+[2025-07-05 17:13:38Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2025-07-05 17:13:38Z INFO JobServerQueue] All queue process task stopped.
+[2025-07-05 17:13:38Z INFO JobServerQueue] Web console line queue drained.
+[2025-07-05 17:13:38Z INFO JobServerQueue] Uploading 3 files in one shot.
+[2025-07-05 17:13:38Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2025-07-05 17:13:38Z INFO JobServerQueue] File upload queue drained.
+[2025-07-05 17:13:38Z INFO JobServerQueue] Starting results-based upload queue...
+[2025-07-05 17:13:38Z INFO JobServerQueue] Uploading 3 file(s) in one shot through results service.
+[2025-07-05 17:13:38Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-07-05 17:13:38Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag\blocks\535ae392-fc6d-4a11-8164-c7aeafdf60a7_bcc57883-0f53-4597-9ef2-a8cccabb1e22.1
+[2025-07-05 17:13:39Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-07-05 17:13:39Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag\blocks\535ae392-fc6d-4a11-8164-c7aeafdf60a7_ac991d90-289b-4f87-bcc5-26463cfa98fc.1
+[2025-07-05 17:13:40Z INFO JobServerQueue] Got a job log file to send to results service.
+[2025-07-05 17:13:40Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag\blocks\535ae392-fc6d-4a11-8164-c7aeafdf60a7_ec82bed3-1d82-5cf8-9d7d-487c19885133.1
+[2025-07-05 17:13:41Z INFO JobServerQueue] Tried to upload 3 file(s) to results, success rate: 3/3.
+[2025-07-05 17:13:41Z INFO JobServerQueue] Results upload queue drained.
+[2025-07-05 17:13:41Z INFO JobServerQueue] Timeline update queue drained.
+[2025-07-05 17:13:41Z INFO JobServerQueue] Disposing job server ...
+[2025-07-05 17:13:41Z INFO JobServerQueue] Disposing results server ...
+[2025-07-05 17:13:41Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2025-07-05 17:13:41Z INFO TempDirectoryManager] Cleaning runner temp folder: D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_work\_temp
+[2025-07-05 17:13:41Z INFO HostContext] Well known directory 'Bin': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\bin'
+[2025-07-05 17:13:41Z INFO HostContext] Well known directory 'Root': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner'
+[2025-07-05 17:13:41Z INFO HostContext] Well known directory 'Diag': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag'
+[2025-07-05 17:13:41Z INFO HostContext] Well known config file 'Telemetry': 'D:\EmbeddedTesting\CICD_HIL_Testing\actions-runner\_diag\.telemetry'
+[2025-07-05 17:13:41Z INFO JobRunner] Raising job completed against run service
+[2025-07-05 17:13:43Z INFO Worker] Job completed.

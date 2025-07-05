@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "hibro123code/cicd-hil-embedded-testing",
+  "pipelineDirectory": "cicd-hil-embedded-testing",
+  "workspaceDirectory": "cicd-hil-embedded-testing\\cicd-hil-embedded-testing",
+  "repositories": {
+    "hibro123code/cicd-hil-embedded-testing": {
+      "repositoryPath": "cicd-hil-embedded-testing\\cicd-hil-embedded-testing",
+      "lastRunOn": "07/05/2025 17:27:52 +07:00"
+    }
+  },
+  "lastRunOn": "07/06/2025 00:13:02 +07:00"
+}
