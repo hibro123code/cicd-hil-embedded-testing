@@ -23,7 +23,7 @@ jobs:
         run: |
           pip install pyserial platformio
           pio pkg install --global
-        shell: bash
+        shell: cmd
 
       - name: 4. Build Firmware for DUT and Simulator
         run: |
@@ -31,7 +31,7 @@ jobs:
           pio run -d firmware-dut
           echo "Building Simulator firmware..."
           pio run -d firmware-simulator
-        shell: bash
+        shell: cmd
 
       - name: 5. Flash Firmwares to devices
         run: |
@@ -39,8 +39,8 @@ jobs:
           pio run -d firmware-dut -t upload
           echo "Flashing Simulator..."
           pio run -d firmware-simulator -t upload
-        shell: bash
+        shell: cmd
 
       - name: 6. Run Hardware-in-the-Loop Tests
         run: python run_tests.py
-        shell: bash
+        shell: cmd
