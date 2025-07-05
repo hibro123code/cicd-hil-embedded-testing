@@ -1,0 +1,46 @@
+name: Embedded CI/CD HIL Test
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  build-flash-and-test:
+    name: Build, Flash and HIL Test
+    runs-on: self-hosted
+
+    steps:
+      - name: 1. Checkout repository code
+        uses: actions/checkout@v3
+
+      - name: 2. Setup Python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: 3. Install project dependencies
+        run: |
+          pip install pyserial platformio
+          pio pkg install --global
+        shell: bash
+
+      - name: 4. Build Firmware for DUT and Simulator
+        run: |
+          echo "Building DUT firmware..."
+          pio run -d firmware-dut
+          echo "Building Simulator firmware..."
+          pio run -d firmware-simulator
+        shell: bash
+
+      - name: 5. Flash Firmwares to devices
+        run: |
+          echo "Flashing DUT..."
+          pio run -d firmware-dut -t upload
+          echo "Flashing Simulator..."
+          pio run -d firmware-simulator -t upload
+        shell: bash
+
+      - name: 6. Run Hardware-in-the-Loop Tests
+        run: python run_tests.py
+        shell: bash
